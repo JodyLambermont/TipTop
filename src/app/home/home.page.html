@@ -4,23 +4,57 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Home
+      <p class="centerText">Tip Top Fitness</p>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <img class="homeImage" src="/assets/images/640426.jpg" alt="fitnessImage"/>
     <ion-card class="welcome-card">
-      <img src="/assets/shapes.svg" alt="" />
+      <!-- <img id="homeImage" src="/assets/images/640426.jpg" alt="fitnessImage"/> -->
       <ion-card-header>
-        <ion-card-subtitle>Get Started</ion-card-subtitle>
-        <ion-card-title>Welcome to Ionic</ion-card-title>
+        <!-- <ion-card-subtitle>Get Started</ion-card-subtitle> -->
+        <ion-card-title id="introText">Brigitte, Pierre, Iris en Alan heten u van harte welkom!<br/>
+            Tip Top staat voor sport en ontspanning in een gezellig en familiaal kader.<br/><hr>
+            
+            Maak snel uw keuze in het MENU om meer info te verkrijgen.<br/>
+            Wij hopen u zo snel mogelijk te mogen verwelkomen.</ion-card-title>
       </ion-card-header>
-      <ion-card-content>
+      <!-- <ion-card-content>
         <p>Now that your app has been created, you'll want to start building out features and components. Check out some of the resources below for next steps.</p>
+      </ion-card-content> -->
+    </ion-card><br><hr>
+    <ion-card id="urencard">
+      <ion-card-header>
+        <ion-card-title id="introText">
+     Openingsuren:
+    </ion-card-title>
+    </ion-card-header>
+    <ion-card-content id="introText">
+     maandag : 13h00 tot 22h00<br>
+     dinsdag : 10h00 tot 22h00<br>
+     woensdag : 13h00 tot 22h00<br>
+     donderdag : 10h00 tot 22h00<br>
+     vrijdag : 10h00 tot 22h00<br>
+     zaterdag : 10h00 tot 16h00<br>
+     zondag : 10h00 tot 14h00<br>
+    </ion-card-content>
+    </ion-card><br>
+    <ion-card>
+        <ion-card-header>
+          <ion-card-title id="introText">
+       Contact:
+      </ion-card-title>
+      </ion-card-header>
+      <ion-card-content id="introText">
+       Voorstehoeve 42, 1730 Mollem<br>
+       Telefoon: 02/452.63.61<br>
+       GSM: 0476/31.44.18<br>
+       Email: tiptopfitness@skynet.be<br>
       </ion-card-content>
-    </ion-card>
-    <ion-list lines="none">
+      </ion-card><br>
+    <!-- <ion-list lines="none">
       <ion-list-header>
         <ion-label>Resources</ion-label>
       </ion-list-header>
@@ -40,5 +74,5 @@
         <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
         <ion-label>Theme Your App</ion-label>
       </ion-item>
-    </ion-list>
+    </ion-list> -->
 </ion-content>

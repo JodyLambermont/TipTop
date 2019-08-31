@@ -20,6 +20,46 @@ export class AppComponent {
       title: 'List',
       url: '/list',
       icon: 'list'
+    },
+    {
+      title: 'Fitness',
+      url: '/fitness',
+      icon: 'fitness'
+    },
+    {
+      title: 'Zumba',
+      url: '/zumba',
+      icon: 'fitness'
+    },
+    {
+      title: 'Kinderdans',
+      url: '/kinderdans',
+      icon: 'fitness'
+    },
+    {
+      title: 'Bodyfit',
+      url: '/bodyfit',
+      icon: 'fitness'
+    },
+    {
+      title: 'Hip-Hop',
+      url: '/hip-hop',
+      icon: 'fitness'
+    },
+    {
+      title: 'Karate',
+      url: '/karate',
+      icon: 'fitness'
+    },
+    {
+      title: 'Planning',
+      url: '/kalender',
+      icon: 'calendar'
+    },
+    {
+      title: 'Persoonlijke Details',
+      url: '/details',
+      icon: 'list'
     }
   ];
 
