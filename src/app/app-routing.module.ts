@@ -25,7 +25,8 @@ const routes: Routes = [
   { path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule' },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   { path: 'kalender', loadChildren: './pages/kalender/kalender.module#KalenderPageModule' },
-  { path: 'details', loadChildren: './pages/details/details.module#DetailsPageModule' },  { path: 'insertlog', loadChildren: './pages/insertlog/insertlog.module#InsertlogPageModule' }
+  { path: 'details', loadChildren: './pages/details/details.module#DetailsPageModule' },
+  { path: 'insertlog', loadChildren: './pages/insertlog/insertlog.module#InsertlogPageModule' }
 
 ];
 
