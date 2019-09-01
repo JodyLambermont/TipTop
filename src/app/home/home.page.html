@@ -1,4 +1,7 @@
 <ion-header>
+    <form (ngSubmit)="logout()" *ngIf="check() == true"><ion-button class="placeButton" color="danger" type="Submit">Uitloggen</ion-button></form>
+    <form (ngSubmit)="register()" *ngIf="check() == false"><ion-button class="placeButton"  type="Submit">Registreren</ion-button></form>
+    <form (ngSubmit)="login()" *ngIf="check() == false"><ion-button class="placeButton"  type="Submit">Inloggen</ion-button></form>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>

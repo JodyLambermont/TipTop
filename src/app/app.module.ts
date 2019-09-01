@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { Storage, IonicStorageModule } from '@ionic/storage';
 import { JwtModule, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { LoggedInGuard } from './guards/logged-in.guard';
+import { CommonModule } from '@angular/common';
 
 export function jwtOptionsFactory(storage) {
   return {
@@ -29,6 +30,7 @@ export function jwtOptionsFactory(storage) {
   entryComponents: [],
   imports: [
     FormsModule,
+    CommonModule,
     HttpClientModule,
     IonicStorageModule.forRoot(),
     BrowserModule,

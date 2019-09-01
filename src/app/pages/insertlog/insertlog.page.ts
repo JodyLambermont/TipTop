@@ -3,6 +3,8 @@ import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ToastController } from "@ionic/angular";
 import { Observable } from 'rxjs';
 import { WorkoutlogService } from '../../workoutlog.service';
+import { AuthenticationService } from 'src/app/authentication.service';
+import { Router } from '@angular/router';
 
 
 
@@ -15,6 +17,8 @@ export class InsertlogPage implements OnInit {
   logForm: FormGroup;
   allData: any;
   constructor(
+    private auth: AuthenticationService,
+    private router: Router,
     public toastController: ToastController,
     private formBuilder: FormBuilder,
     private workoutlogservice: WorkoutlogService,
@@ -30,6 +34,22 @@ export class InsertlogPage implements OnInit {
       Description: ["", [Validators.required]]
     });
   }
+  check(){
+    return this.auth.isAuthenticated();
+   }
+
+   login(){
+    return this.router.navigate(["login"])
+   }
+
+   register(){
+    return this.router.navigate(["register"])
+
+   }
+
+   logout(){
+    return this.auth.logout();
+   }
   
   
   //submit data from reactive form with api call

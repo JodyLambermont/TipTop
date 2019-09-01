@@ -39,6 +39,7 @@
        1px 1px 0 #000;
   }
   
+
   #FitnessText {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: medium;
@@ -57,4 +58,7 @@
 
   article { 
     display: block;
+  }
+  .placeButton{
+    float: right;
   }

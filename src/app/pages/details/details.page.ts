@@ -6,6 +6,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { WorkoutlogService } from '../../workoutlog.service';
 import {IonInfiniteScroll } from '@ionic/angular';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { AuthenticationService } from '../../authentication.service';
 
 
 @Component({
@@ -35,11 +36,28 @@ export class DetailsPage implements OnInit {
 
 
 
-  constructor(private router: Router, private alertCtrl: AlertController, @Inject(LOCALE_ID) private locale: string, private workoutlogservice: WorkoutlogService) {
+  constructor(private auth: AuthenticationService, private router: Router, private alertCtrl: AlertController, @Inject(LOCALE_ID) private locale: string, private workoutlogservice: WorkoutlogService) {
     workoutlogservice.getAllOfUser((data)=>{
       this.putted = data;
       //console.log(this.putted);
     });
+   }
+
+   check(){
+    return this.auth.isAuthenticated();
+   }
+
+   login(){
+    return this.router.navigate(["login"])
+   }
+
+   register(){
+    return this.router.navigate(["register"])
+
+   }
+
+   logout(){
+    return this.auth.logout();
    }
 
    async deleteOnClick(put){
