@@ -52,6 +52,11 @@ export class AppComponent {
       icon: 'fitness'
     },
     {
+      title: 'Invoegen Workout',
+      url: '/insertlog',
+      icon: 'add-circle-outline'
+    },
+    {
       title: 'Planning',
       url: '/kalender',
       icon: 'calendar'
