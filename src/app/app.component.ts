@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, NavController, MenuController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
@@ -66,9 +66,17 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    private navController: NavController,
+    private menuController: MenuController
   ) {
     this.initializeApp();
+  }
+
+  goToPage(page){
+    this.navController.navigateForward(page);
+    //check here if weird inconsistency accross platforms (desktop(static menu) vs mobile(hamburger menu) for menu controller) 
+    this.menuController.close();
   }
 
   initializeApp() {

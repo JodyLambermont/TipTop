@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  url: "https://tiptop.azurewebsites.net",
+  APIKey: "bgwcnldpidhlcd1dwyuaieywcm8yhc3c1kvdy1dh"
 };
 
 /*
