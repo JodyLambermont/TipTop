@@ -1,0 +1,60 @@
+.welcome-card img {
+    max-height: 35vh;
+    overflow: hidden;
+  }
+  
+  .centerText {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    color: green;
+  }
+  
+  // .center {
+  //   text-align: center;
+  // }
+  
+  .homeImage {
+  
+    width:100%;
+      height:100%;
+     position: fixed; 
+  }
+
+  .tarieven{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:25%;
+    height:20%;
+  }
+
+  #introText {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    color: white;
+    text-shadow:
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+  }
+  
+  #FitnessText {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: medium;
+    text-align: center;
+    color: white;
+    text-shadow:
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+  }
+  
+  #urencard {
+    background-color: green;
+  }
+
+  article { 
+    display: block;
+  }
