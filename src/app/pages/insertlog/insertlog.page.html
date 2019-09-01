@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+      <ion-title><p class="centerText">Invoegen van Workout</p></ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  
+      <br />
+      <br />
+      <h1 style="text-align: center">Selecteer Workout-tijd</h1>
+      <br />
+      <br />
+      <br />
+      <br />
+    
+      <form [formGroup]="logForm" (ngSubmit)="logSubmit()">
+    
+        <ion-list class="centerList">
+          <ion-item lines="none">
+            <ion-label position="stacked">Startuur</ion-label>
+            <ion-datetime formControlName="Start" placeholder="klik hier" display-format="DD-MM-YYYY HH:mm" picker-format="DD-MM-YYYY HH:mm"></ion-datetime >
+          </ion-item>
+    
+          <ion-item lines="none">
+            <ion-label position="stacked">Einduur</ion-label>
+            <ion-datetime formControlName="Stop" placeholder="klik hier" display-format="DD-MM-YYYY HH:mm" picker-format="DD-MM-YYYY HH:mm"></ion-datetime >
+          </ion-item>
+        </ion-list>
+    
+        <ion-list class="centerList">
+          <ion-item>
+            <ion-input placeholder="Geef de workout in:" formControlName="Description"></ion-input>
+          </ion-item>
+        </ion-list>
+        <br />
+        <br />
+          <ion-button expand="full" type="submit" [disabled]="!logForm.valid">Workout Opslaan</ion-button>
+    
+      </form>
+    
+
+  <ion-content>
+      <ion-card>
+          <ion-card-header>
+            <ion-card-title id="introText">
+         Contact:
+        </ion-card-title>
+        </ion-card-header>
+        <ion-card-content id="introText">
+         Voorstehoeve 42, 1730 Mollem<br>
+         Telefoon: 02/452.63.61<br>
+         GSM: 0476/31.44.18<br>
+         Email: tiptopfitness@skynet.be<br>
+        </ion-card-content>
+        </ion-card><br>
+  </ion-content>
+  

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild,Inject,LOCALE_ID} from '@angular/core';
 import { NavController, AlertController, ModalController } from '@ionic/angular';
 import { formatDate } from '@angular/common';
-
+import { Router } from '@angular/router';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { WorkoutlogService } from '../../workoutlog.service';
 import {IonInfiniteScroll } from '@ionic/angular';
@@ -35,7 +35,7 @@ export class DetailsPage implements OnInit {
 
 
 
-  constructor(private alertCtrl: AlertController, @Inject(LOCALE_ID) private locale: string, private workoutlogservice: WorkoutlogService) {
+  constructor(private router: Router, private alertCtrl: AlertController, @Inject(LOCALE_ID) private locale: string, private workoutlogservice: WorkoutlogService) {
     workoutlogservice.getAllOfUser((data)=>{
       this.putted = data;
       console.log(this.putted);
@@ -44,6 +44,8 @@ export class DetailsPage implements OnInit {
 
    async deleteOnClick(put){
     this.workoutlogservice.DeleteLog(put);
+    this.router.navigate(["details"]);
+
    }
    
 
@@ -116,6 +118,7 @@ export class DetailsPage implements OnInit {
            
            this.workoutlogservice.UpdateLog(put);
            console.log(changedArray);
+          
          }
         }
       ]

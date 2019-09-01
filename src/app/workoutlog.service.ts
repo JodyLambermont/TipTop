@@ -54,6 +54,20 @@ export class WorkoutlogService {
       .post(`${this.url}/api/WorkoutLog/Delete`, logID, { headers: options }).subscribe(res=>{console.log(res)},err =>{console.log(err)});
     }
 
+    async CreateLog(created) {
+      created = JSON.stringify(created);
+      console.log(created);
+      let token = await this.storage.get("access_token");
+      var options = new HttpHeaders({
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+        APIkey: this.APIKey
+      });
+      let request =  this.http
+      .post(`${this.url}/api/WorkoutLog/Create`, created, { headers: options }).subscribe(res=>{console.log(res)},err =>{console.log(err)});
+    }
+
+
 
   
 
