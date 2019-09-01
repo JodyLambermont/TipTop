@@ -38,7 +38,7 @@ export class DetailsPage implements OnInit {
   constructor(private router: Router, private alertCtrl: AlertController, @Inject(LOCALE_ID) private locale: string, private workoutlogservice: WorkoutlogService) {
     workoutlogservice.getAllOfUser((data)=>{
       this.putted = data;
-      console.log(this.putted);
+      //console.log(this.putted);
     });
    }
 
@@ -84,26 +84,26 @@ export class DetailsPage implements OnInit {
           text:"Save Changes",
           handler: (alertData) =>{
            this.changedDesc = alertData.addDesc;
-           console.log(this.changedDesc);
+           //console.log(this.changedDesc);
            this.changedSDate = alertData.startDate;
            this.changedEDate = alertData.endDate;
            this.changedStart = alertData.addStart;
            this.changedEnd = alertData.addEnd;
           //  let editedId = this.putted[0].id;
-          console.log(put);
-          console.log(this.putted)
+          //console.log(put);
+          //console.log(this.putted)
           var editedId = put.id;
 
-           console.log(editedId);
+           //console.log(editedId);
  
            var finalStartDate = new Date(this.changedSDate + "T" + this.changedStart + ":00")
-           console.log(finalStartDate)
+           //console.log(finalStartDate)
            finalStartDate.toISOString
-           console.log(finalStartDate)
-           console.log(this.changedSDate)
-           console.log(this.changedStart)
+           //console.log(finalStartDate)
+           //console.log(this.changedSDate)
+           //console.log(this.changedStart)
            var finalEndDate = new Date(this.changedEDate + "T" + this.changedEnd + ":00")
-           console.log(finalEndDate)
+           //console.log(finalEndDate)
            
            
            var changedArray = {
@@ -117,20 +117,20 @@ export class DetailsPage implements OnInit {
 
            
            this.workoutlogservice.UpdateLog(put);
-           console.log(changedArray);
+           //console.log(changedArray);
           
          }
         }
       ]
     });
    addTodoAlert.present();
-   console.log(this.changedDesc);
+   //console.log(this.changedDesc);
   }
  
 
    loadData(event) {
     setTimeout(() => {
-      console.log('Done');
+      //console.log('Done');
       event.target.complete();
 
       // App logic to determine if all data is loaded
