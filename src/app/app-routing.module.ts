@@ -1,3 +1,5 @@
+import { LoggedInGuard } from './guards/logged-in.guard';
+import { AuthGuardGuard } from './guards/auth-guard.guard';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
@@ -22,8 +24,8 @@ const routes: Routes = [
   { path: 'bodyfit', loadChildren: './pages/bodyfit/bodyfit.module#BodyfitPageModule' },
   { path: 'hip-hop', loadChildren: './pages/hip-hop/hip-hop.module#HipHopPageModule' },
   { path: 'karate', loadChildren: './pages/karate/karate.module#KaratePageModule' },
-  { path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule' },
-  { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
+  { path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule', canActivate: [LoggedInGuard] },
+  { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule', canActivate: [LoggedInGuard] },
   { path: 'kalender', loadChildren: './pages/kalender/kalender.module#KalenderPageModule' },
   { path: 'details', loadChildren: './pages/details/details.module#DetailsPageModule' }
 ];

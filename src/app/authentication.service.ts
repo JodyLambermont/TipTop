@@ -60,8 +60,13 @@ export class AuthenticationService {
     return this.http
     .post(`${this.url}/api/Auth/Register`, credentials, { headers: options })
     .pipe(
+      tap(res => {
+        this.router.navigate(["login"])
+      }
+      ),
       catchError(e => {
-        this.showAlert(e.error.message);
+        this.presentToast1();
+        //this.showAlert(e.error.message);
         throw new Error(e);
       })
     );
@@ -84,6 +89,7 @@ export class AuthenticationService {
           this.user = this.helper.decodeToken(res["token"]); // stores user data (here email and userid)
           //console.log(this.user);
           this.authenticationState.next(true);
+          //console.log(this.authenticationState.value);
           this.router.navigate([""]);
         }),
         catchError(e => {
@@ -96,7 +102,8 @@ export class AuthenticationService {
 
   logout() {
     this.storage.remove(TOKEN_KEY).then(() => {
-      this.authenticationState.next(false);
+      this.authenticationState.next(false),
+      this.router.navigate([""])
     });
   }
 
@@ -104,7 +111,7 @@ export class AuthenticationService {
     return this.authenticationState.value;
   }
   
-  //error message onvolledig, api stuurt bericht niet terug?
+  //error message onvolledig?
   showAlert(msg) {
     let alert = this.alertController.create({
       message: msg,
@@ -112,6 +119,15 @@ export class AuthenticationService {
       buttons: ["OK"]
     });
     alert.then(alert => alert.present());
+  }
+
+  async presentToast1(){
+    const toast = await this.toastController.create({
+      message: "Gebruiker bestaat al!",
+      duration: 2000,
+      position: 'middle'
+    });
+    toast.present();
   }
 
   async presentToast(){
