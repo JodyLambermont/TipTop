@@ -13,11 +13,7 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
-  {
-    path: 'list',
-    loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
-  },
-  { path: 'home', loadChildren: './pages/home/home.module#HomePageModule' },
+
   { path: 'fitness', loadChildren: './pages/fitness/fitness.module#FitnessPageModule' },
   { path: 'zumba', loadChildren: './pages/zumba/zumba.module#ZumbaPageModule' },
   { path: 'kinderdans', loadChildren: './pages/kinderdans/kinderdans.module#KinderdansPageModule' },
