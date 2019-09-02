@@ -1,7 +1,7 @@
 <ion-header>
-    <form (ngSubmit)="logout()" *ngIf="check() == true"><ion-button class="centerButton" color="danger" type="Submit">Uitloggen</ion-button></form>
-    <form (ngSubmit)="register()" *ngIf="check() == false"><ion-button class="centerButton"  type="Submit">Registreren</ion-button></form>
-    <form (ngSubmit)="login()" *ngIf="check() == false"><ion-button class="centerButton"  type="Submit">Inloggen</ion-button></form>
+    <form (ngSubmit)="logout()" *ngIf="check() == true"><ion-button class="placeButton" color="danger" type="Submit">Uitloggen</ion-button></form>
+    <form (ngSubmit)="register()" *ngIf="check() == false"><ion-button class="placeButton"  type="Submit">Registreren</ion-button></form>
+    <form (ngSubmit)="login()" *ngIf="check() == false"><ion-button class="placeButton"  type="Submit">Inloggen</ion-button></form>
   <ion-toolbar>
       <ion-buttons slot="start">
           <ion-menu-button></ion-menu-button>
@@ -9,7 +9,29 @@
     <ion-title>Kalender</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<ion-row>
+  <!-- Change the displayed calendar mode -->
+  <ion-col size="2">
+    <ion-button expand="block" [color]="calendar.mode == 'month' ? 'primary' : 'secondary'" (click)="changeMode('month')">Month</ion-button>
+  </ion-col>
+  <ion-col size="2">
+    <ion-button expand="block" [color]="calendar.mode == 'week' ? 'primary' : 'secondary'" (click)="changeMode('week')">Week</ion-button>
+  </ion-col>
+  <ion-col size="2">
+    <ion-button expand="block" [color]="calendar.mode == 'day' ? 'primary' : 'secondary'" (click)="changeMode('day')">Day</ion-button>
+  </ion-col>
+  <ion-col size="2">
+    <ion-button expand="block" [color]="primary" (click)="today()">Today</ion-button>
+  </ion-col>
+</ion-row>
 <ion-content>
-
+    <calendar [eventSource]="eventSource"
+    [calendarMode]="calendar.mode"
+    [currentDate]="calendar.currentDate"
+    (onRangeChanged)="reloadSource(startTime, endTime)"
+    (onEventSelected)="onEventSelected($event)"
+    (onTitleChanged)="onViewTitleChanged($event)"
+    (onTimeSelected)="onTimeSelected($event)"
+    step="30">
+  </calendar>
 </ion-content>
